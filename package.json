@@ -1,0 +1,58 @@
+{
+  "name": "nccu-token",
+  "version": "1.0.0",
+  "description": "nccu token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testrpc": "testrpc",
+    "truffle": "truffle",
+    "migrate": "truffle migrate --reset",
+    "console": "truffle console",
+    "build": "webpack --watch",
+    "buildp": "webpack -p",
+    "start": "pm2 start index.js --watch --no-daemon",
+    "startp": "pm2 start index.js -i 0 --no-daemon",
+    "stop": "pm2 stop all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nccu-token"
+  },
+  "author": "Jamie",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-latest": "^6.24.1",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.4",
+    "ethereumjs-testrpc": "^3.0.5",
+    "file-loader": "^0.11.2",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "truffle": "^3.2.5",
+    "vue": "^2.3.4",
+    "vue-loader": "^12.2.1",
+    "vue-router": "^2.6.0",
+    "vue-template-compiler": "^2.3.4",
+    "webpack": "^3.0.0",
+    "zeppelin-solidity": "^1.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^3.0.0",
+    "pm2": "^2.5.0",
+    "web3": "^0.19.0"
+  }
+}
