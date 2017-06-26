@@ -10,6 +10,7 @@ exports.info = async ctx => {
         ctx.body = {
             name: myToken.name(),
             symbol: myToken.symbol(),
+            image: myToken.image(),
             totalSupply: myToken.totalSupply()
         }
     } catch (e) {

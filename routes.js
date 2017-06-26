@@ -5,7 +5,7 @@ const eth = require('./controllers/eth')
 const tokenFactory = require('./controllers/tokenFactory')
 const myToken = require('./controllers/myToken')
 
-module.exports = router => {
+module.exports = (router, multer) => {
     router.get('/config', async ctx => {
         ctx.body = require('./config')
     })
@@ -14,7 +14,7 @@ module.exports = router => {
 
     router.get('/eth/info', eth.info)
 
-    router.post('/token-factory/create', tokenFactory.create)
+    router.post('/token-factory/create', multer.single('image'), tokenFactory.create)
     router.get('/token-factory/list', tokenFactory.list)
 
     router.get('/my-token/info/:token', myToken.info)
