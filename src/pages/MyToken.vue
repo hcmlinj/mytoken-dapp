@@ -16,7 +16,28 @@
                     <input type="text" class="form-control" placeholder="token" v-model="token">
                 </div>
                 <button type="button" class="btn btn-default" @click="info">Info</button>
-                <pre>{{tokenInfo}}</pre>
+                <br>
+                <table class="table table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">
+                                <a :href="tokenInfo.image" target="_blank">
+                                    <img class="img-circle" :src="tokenInfo.image" alt="" width="100" height="100">
+                                </a>
+                            </td>
+                            <th>Name</th>
+                            <td>{{tokenInfo.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Symbol</th>
+                            <td>{{tokenInfo.symbol}}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Supply</th>
+                            <td>{{tokenInfo.totalSupply}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     

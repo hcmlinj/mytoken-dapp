@@ -1,12 +1,46 @@
 {
     "contract": {
-        "TokenFactory": "0xecf17cf39a28a5cbe23325e8f3546362457425e8"
+        "TokenFactory": "0xc87cf9348837f74add10bab3878690c122e83bcb"
     },
     "ethereum": {
         "host": "http://127.0.0.1:8545"
     },
+    "ipfs": {
+        "host": "ipfs.infura.io",
+        "port": 5001,
+        "protocol": "https"
+    },
     "abi": {
         "TokenFactory": [
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "symbol",
+                        "type": "string"
+                    },
+                    {
+                        "name": "decimals",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "INITIALSUPPLY",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "image",
+                        "type": "string"
+                    }
+                ],
+                "name": "createMyToken",
+                "outputs": [],
+                "payable": false,
+                "type": "function"
+            },
             {
                 "constant": true,
                 "inputs": [
@@ -42,35 +76,14 @@
                         "type": "uint256"
                     },
                     {
+                        "name": "image",
+                        "type": "string"
+                    },
+                    {
                         "name": "timestamp",
                         "type": "uint256"
                     }
                 ],
-                "payable": false,
-                "type": "function"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "name",
-                        "type": "string"
-                    },
-                    {
-                        "name": "symbol",
-                        "type": "string"
-                    },
-                    {
-                        "name": "decimals",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "INITIALSUPPLY",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "createMyToken",
-                "outputs": [],
                 "payable": false,
                 "type": "function"
             },
@@ -114,6 +127,11 @@
                         "indexed": false,
                         "name": "decimals",
                         "type": "uint256"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "image",
+                        "type": "string"
                     },
                     {
                         "indexed": false,
@@ -287,6 +305,19 @@
                 "type": "function"
             },
             {
+                "constant": true,
+                "inputs": [],
+                "name": "image",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "payable": false,
+                "type": "function"
+            },
+            {
                 "inputs": [
                     {
                         "name": "owner",
@@ -307,6 +338,10 @@
                     {
                         "name": "_INITIAL_SUPPLY",
                         "type": "uint256"
+                    },
+                    {
+                        "name": "_image",
+                        "type": "string"
                     }
                 ],
                 "payable": false,

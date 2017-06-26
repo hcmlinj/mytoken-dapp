@@ -10,6 +10,7 @@ contract TokenFactory {
         string symbol;
         uint decimals;
         uint totalSupply;
+        string image;
         uint timestamp;
     }
 
@@ -19,6 +20,7 @@ contract TokenFactory {
         string name,
         string symbol,
         uint decimals,
+        string image,
         uint totalSupply
     );
 
@@ -28,8 +30,8 @@ contract TokenFactory {
         return tokens.length;
     }
 
-    function createMyToken(string name, string symbol, uint decimals, uint INITIALSUPPLY) {
-        MyToken token = new MyToken(msg.sender, name, symbol, decimals, INITIALSUPPLY);
+    function createMyToken(string name, string symbol, uint decimals, uint INITIALSUPPLY, string image) {
+        MyToken token = new MyToken(msg.sender, name, symbol, decimals, INITIALSUPPLY, image);
 
         tokens.push(Token({
             owner: msg.sender,
@@ -38,9 +40,10 @@ contract TokenFactory {
             symbol: symbol,
             decimals: decimals,
             totalSupply: INITIALSUPPLY,
+            image: image,
             timestamp: now
         }));
 
-        TokenCreated(msg.sender, token, name, symbol, decimals, INITIALSUPPLY);
+        TokenCreated(msg.sender, token, name, symbol, decimals, image, INITIALSUPPLY);
     }
 }

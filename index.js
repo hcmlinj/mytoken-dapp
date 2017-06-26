@@ -5,15 +5,18 @@ const Router = require('koa-router')
 const bodyparser = require('koa-bodyparser')
 const serve = require('koa-static')
 const fs = require('fs')
+const multer = require('koa-multer')
 
 const routes = require('./routes')
 
 const app = new Koa()
 const router = new Router()
 
-const port = process.env.PORT || 3000
+routes(router, multer({
+    storage: multer.memoryStorage()
+}))
 
-routes(router)
+const port = process.env.PORT || 3000
 
 app
     .use(bodyparser())
