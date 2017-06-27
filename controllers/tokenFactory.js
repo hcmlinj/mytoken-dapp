@@ -5,6 +5,10 @@ const web3 = require('../models/web3')
 const config = require('../config.json')
 
 exports.create = async ctx => {
+    if (typeof ctx.req.file !== 'undefined' && !ctx.req.file.mimetype.match(/^image\//)) {
+        ctx.throw(400, 'only allow image.')
+    }
+
     const body = ctx.req.body
     const tokenFactory = web3.eth.contract(config.abi.TokenFactory).at(config.contract.TokenFactory)
 
